@@ -26,8 +26,8 @@ typedef struct _CPU {
     uint8_t SP; // stack pointer
     ushort stack[MAX_STACK_LEVEL]; // stack
 
-    uint8_t ram[MAX_RAM_SIZE]; // memory
-    uint8_t vram[WINDOW_HIGHT][WINDOW_WIDTH];
+    uint8_t ram[MAX_RAM_SIZE]; // ramdom acess memory
+    uint8_t vram[WINDOW_HIGHT][WINDOW_WIDTH]; // ram for screen
 
 };
 
