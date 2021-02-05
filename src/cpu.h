@@ -11,7 +11,25 @@
 
 typedef unsigned char uint8_t;
 typedef unsigned short ushort;
+typedef struct _CPU CPU;
+typedef void (*fptrResetmem)(CPU *);
+
+typedef struct _CPU {
+    // normal registers
+    uint8_t V[MAX_GENERAL_REGISTER];
+    ushort I;
+    // special registers
+    uint8_t delay;
+    uint8_t sound_timer;
+    ushort PC; // program counter
+    
+    uint8_t SP; // stack pointer
+    ushort stack[MAX_STACK_LEVEL]; // stack
+
+    uint8_t ram[MAX_RAM_SIZE]; // memory
+    uint8_t vram[WINDOW_HIGHT][WINDOW_WIDTH];
+
+};
 
 
-
-#endif
+#endif // __CPU
