@@ -28,7 +28,8 @@ typedef struct _CPU {
     uint8_t ram[MAX_RAM_SIZE]; // ramdom acess memory
     uint8_t vram[WINDOW_HIGHT][WINDOW_WIDTH]; // ram for screen
 
-};
+} CPU;
 
+int new_cpu(CPU **self);
 
 #endif // __CPU
