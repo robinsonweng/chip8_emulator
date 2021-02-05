@@ -36,5 +36,6 @@ typedef struct _CPU {
 
 int new_cpu(CPU **self);
 int load_rom(CPU *self);
+void reset_cpu(CPU *self);
 
 #endif // __CPU

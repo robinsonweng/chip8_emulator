@@ -32,3 +32,31 @@ int new_cpu(CPU **self){ // constructor
         for (int j=0;j<=WINDOW_WIDTH;j++)
             (*self)->vram[i][j] = 0;
 }
+
+int load_rom(CPU *self){
+
+}
+
+void reset_cpu(CPU *self){
+    (self)->I = 0;
+    (self)->delay = 0;
+    (self)->sound_timer = 0;
+    (self)->PC = 0;
+    (self)->SP = 0;
+
+    // registers
+    for (int i=0;i<= MAX_GENERAL_REGISTER;i++)
+        (self)->V[i] = 0;
+    
+    for (int i=0;i<=MAX_STACK_LEVEL;i++)
+        (self)->stack[i] = 0;
+
+    // ram
+    for (int i=0;i<=MAX_RAM_SIZE;i++)
+        (self)->ram[i] = 0;
+
+    // screen
+    for (int i=0;i<=WINDOW_HIGHT;i++)
+        for (int j=0;j<=WINDOW_WIDTH;j++)
+            (self)->vram[i][j] = 0;
+}
