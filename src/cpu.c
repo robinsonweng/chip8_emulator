@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "cpu.h"
 
 
@@ -34,7 +35,18 @@ int new_cpu(CPU **self){ // constructor
 }
 
 int load_rom(CPU *self){
-
+    FILE *romfile;
+    char *buffer;
+    long filelength;
+    romfile = fopen("../Animal Race [Brian Astle].ch8", "rb");
+    if (!romfile){
+        fprintf(stderr, "can't open file \n");
+        return -1;
+    }
+    fseek(romfile, 0, SEEK_END);
+    filelength = ftell(romfile);
+    printf("the cursor is at %d\n", filelength);
+    return 0;
 }
 
 void reset_cpu(CPU *self){
