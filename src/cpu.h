@@ -36,12 +36,11 @@ typedef struct _CPU {
     /*
     applying method to the struct by fptr
     */
-   CPUfptr LoadRom, ResetCpu;
+   CPUfptr LoadRom;
 
 } CPU;
 
 int new_cpu(CPU **self);
-int load_rom(CPU *self);
-void reset_cpu(CPU *self);
+
 
 #endif // __CPU
