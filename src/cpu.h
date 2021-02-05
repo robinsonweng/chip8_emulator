@@ -12,7 +12,6 @@
 typedef unsigned char uint8_t;
 typedef unsigned short ushort;
 typedef struct _CPU CPU;
-typedef void (*fptrResetmem)(CPU *);
 
 typedef struct _CPU {
     // normal registers
