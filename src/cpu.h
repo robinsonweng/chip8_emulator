@@ -3,11 +3,15 @@
 
 #include <stdlib.h>
 
+// chip8
 #define MAX_RAM_SIZE 4096
-#define WINDOW_HIGHT 800
-#define WINDOW_WIDTH 800
+#define PROGRAM_START_RAM_LOACATION 0x200
 #define MAX_GENERAL_REGISTER 16
 #define MAX_STACK_LEVEL 16
+// screen
+// The original implementation of the Chip-8 language used a 64x32-pixel monochrome display
+#define WINDOW_HIGHT 32
+#define WINDOW_WIDTH 64
 
 typedef unsigned char uint8_t;
 typedef unsigned short ushort;
@@ -31,5 +35,6 @@ typedef struct _CPU {
 } CPU;
 
 int new_cpu(CPU **self);
+int load_rom(CPU *self);
 
 #endif // __CPU
