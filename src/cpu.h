@@ -16,7 +16,7 @@
 typedef unsigned char uint8_t;
 typedef unsigned short ushort;
 typedef struct _CPU CPU;
-typedef int (*fptr)(CPU *);
+typedef int (*CPUfptr)(CPU *);
 
 typedef struct _CPU {
     // normal registers
@@ -36,7 +36,7 @@ typedef struct _CPU {
     /*
     applying method to the struct by fptr
     */
-   fptr LoadRom, ResetCpu;
+   CPUfptr LoadRom, ResetCpu;
 
 } CPU;
 
