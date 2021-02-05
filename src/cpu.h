@@ -16,6 +16,7 @@
 typedef unsigned char uint8_t;
 typedef unsigned short ushort;
 typedef struct _CPU CPU;
+typedef int (*fptr)(CPU *);
 
 typedef struct _CPU {
     // normal registers
@@ -31,6 +32,11 @@ typedef struct _CPU {
 
     uint8_t ram[MAX_RAM_SIZE]; // ramdom acess memory
     uint8_t vram[WINDOW_HIGHT][WINDOW_WIDTH]; // ram for screen
+
+    /*
+    applying method to the struct by fptr
+    */
+   fptr LoadRom, ResetCpu;
 
 } CPU;
 

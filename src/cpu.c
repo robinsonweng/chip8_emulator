@@ -32,6 +32,9 @@ int new_cpu(CPU **self){ // constructor
     for (int i=0;i<=WINDOW_HIGHT;i++)
         for (int j=0;j<=WINDOW_WIDTH;j++)
             (*self)->vram[i][j] = 0;
+
+    // initalize method in struct
+    (*self)->LoadRom = load_rom; (*self)->ResetCpu = reset_cpu;
 }
 
 int load_rom(CPU *self){
