@@ -36,7 +36,7 @@ typedef struct _CPU {
     /*
     applying method to the struct by fptr
     */
-   CPUfptr LoadRom;
+   CPUfptr LoadRom, ResetCpu;
 
 } CPU;
 

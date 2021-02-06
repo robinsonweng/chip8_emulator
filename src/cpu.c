@@ -8,23 +8,20 @@
     refer: https://hackmd.io/@sysprog/c-oop?type=view
     & https://www.codeproject.com/Articles/108830/Inheritance-and-Polymorphism-in-C
 */
-
 static int load_rom(CPU *self){
     FILE *romfile;
     char *buffer;
     long filelength;
-    romfile = fopen("../Animal Race [Brian Astle].ch8", "rb");
+    romfile = fopen("../Anima Race [Brian Astle].ch8", "rb");
     if (!romfile){
         fprintf(stderr, "can't open file \n");
         return -1;
     }
-    fseek(romfile, 0, SEEK_END);
-    filelength = ftell(romfile);
-    printf("the cursor is at %d\n", filelength);
+    fclose(romfile);
     return 0;
 }
 
-static void reset_cpu(CPU *self){
+static int reset_cpu(CPU *self){
     (self)->I = 0;
     (self)->delay = 0;
     (self)->sound_timer = 0;
@@ -46,6 +43,7 @@ static void reset_cpu(CPU *self){
     for (int i=0;i<=WINDOW_HIGHT;i++)
         for (int j=0;j<=WINDOW_WIDTH;j++)
             (self)->vram[i][j] = 0;
+    return 0;
 }
 
 int new_cpu(CPU **self){ // constructor
@@ -75,5 +73,6 @@ int new_cpu(CPU **self){ // constructor
 
     // initalize method in struct
     (*self)->LoadRom = load_rom;
+    (*self)->ResetCpu = reset_cpu;
     return 0;
 }
