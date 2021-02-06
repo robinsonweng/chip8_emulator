@@ -1,2 +1,6 @@
 src/*.exe
 *.exe
+*.ch8
+/.vs
+/.vscode
+*txt
