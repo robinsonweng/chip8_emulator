@@ -5,8 +5,12 @@
 
 int main(){
     CPU *cpuobj;
-    if (-1 == new_cpu(&cpuobj))
-        printf("cpu init failed");
-    printf("%d", cpuobj->PC);
+    printf("init cpu object\n");
+    if (-1==new_cpu(&cpuobj)){
+        printf("cpu new faild\n");
+        return -1;
+    }
+    cpuobj->LoadRom(cpuobj);
+
     return 0;
 }
